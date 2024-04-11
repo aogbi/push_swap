@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aogbi <aogbi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aogbi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 11:50:42 by aogbi             #+#    #+#             */
-/*   Updated: 2024/04/11 01:51:59 by aogbi            ###   ########.fr       */
+/*   Created: 2023/11/13 17:49:41 by aogbi             #+#    #+#             */
+/*   Updated: 2023/11/15 21:32:36 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-#include "Libft/libft.h"
-#include "printf/ft_printf.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*head;
 
-#endif
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head -> next = NULL;
+	head -> content = content;
+	return (head);
+}
