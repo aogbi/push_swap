@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstbeforlast.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aogbi <aogbi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 01:01:51 by aogbi             #+#    #+#             */
-/*   Updated: 2024/04/11 05:03:23 by aogbi            ###   ########.fr       */
+/*   Created: 2024/04/11 05:38:45 by aogbi             #+#    #+#             */
+/*   Updated: 2024/04/11 05:55:46 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstbeforlast(t_list *lst)
 {
-	t_list	*head;
-
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	head = lst;
-	lst = lst->next;
-	free(head);
+	if (!lst)
+		return (NULL);
+	while (lst -> next -> next)
+		lst = lst -> next;
+	return (lst);
 }
