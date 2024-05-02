@@ -3,110 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aogbi <aogbi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 10:24:47 by aogbi             #+#    #+#             */
-/*   Updated: 2024/04/11 06:29:28 by aogbi            ###   ########.fr       */
+/*   Created: 2024/05/02 06:31:19 by aogbi             #+#    #+#             */
+/*   Updated: 2024/05/02 12:39:01 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-t_list	*stack_a(int argc, char **argv)
+int	is_sorted(t_list *list)
 {
-	t_list	*head;
-	t_list	*node;
+	if (((ssize_t)ft_lstlast(list)->content < (ssize_t)list->content)
+		|| ((ssize_t)ft_lstlast(list)->content < (ssize_t)list->next->content))
+		return (0);
+	if (((ssize_t)list->content > (ssize_t)list->next->content))
+		return (0);
+	return (1);
+}
 
-	if (argc < 2)
-		return (NULL);
-	head = NULL;
-	while(--argc)
+void	prepar(t_list **list, char c)
+{
+	if (is_sorted(*list))
+		return ;
+	if (((ssize_t)(*list)->content > (ssize_t)(*list)->next->content)
+		&& ((ssize_t)(*list)->content > (ssize_t)ft_lstlast(*list)->content))
 	{
-		node = ft_lstnew((void *)(size_t)ft_atoi(argv[argc]));
-		if (!node)
-			return (NULL);
-		ft_lstadd_front(&head, node);
+		rotate(list);
+		ft_printf("r%c\n", c);
 	}
-	return (head);
-}
-
-void	swap(t_list *stack)
-{
-	if (!stack)
-	    return ;
-	stack -> content = (void *)((size_t)stack -> content + (size_t)stack -> next -> content);
-	stack -> next -> content = (void *)((size_t)stack -> content - (size_t)stack -> next -> content);
-	stack -> content = (void *)((size_t)stack -> content - (size_t)stack -> next -> content);
-}
-
-void	rotate(t_list **stack)
-{
-	t_list	*tmp;
-
-	if (!stack || !*stack)
-		return ;
-	tmp = ft_lstlast(*stack);
-	tmp -> next = (*stack);
-	tmp = (*stack) -> next;
-	(*stack) -> next = NULL;
-	(*stack) = tmp;
-}
-
-void	reverse_rotate(t_list **stack)
-{
-	t_list	*tmp;
-
-	if (!stack || !*stack)
-		return ;
-	tmp = ft_lstbeforlast(*stack);
-	tmp -> next -> next = (*stack);
-	(*stack) = tmp -> next;
-	tmp -> next = NULL;
-}
-
-void	push(t_list **stack_1, t_list **stack_2)
-{
-	t_list	*tmp;
-
-	if (!stack_1 || !stack_2 || !*stack_1)
-		return ;
-	tmp = *stack_1;
-	*stack_1 = (*stack_1) -> next;
-	tmp -> next = (*stack_2);
-	(*stack_2) = tmp;
-}
-
-void	print_stack(t_list *head)
-{
-	t_list	*current;
-
-	current = head;
-	while (current)
+	else if (((ssize_t)ft_lstlast(*list)->content < (ssize_t)(*list)->content)
+			&& ((ssize_t)ft_lstlast(*list)->content < (ssize_t)(*list)->next->content))
 	{
-		ft_printf("%d ", (int)(size_t)current->content);
-		current = current->next;
+		reverse_rotate(list);
+		ft_printf("rr%c\n", c);
 	}
-	ft_printf("\n");
+	else
+	{
+		swap(*list);
+		ft_printf("s%c\n", c);
+	}
 }
 
-void	del(void *content)
+void	push_to_b(t_list **a, t_list **b)
 {
-	ft_printf("%d ", (int)(size_t)content);
+	while (ft_lstsize(*a) > 3)
+	{
+		prepar(a, 'a');
+		push(a, b);
+		ft_printf("pb\n");
+		if (ft_lstsize(*b) >= 3)
+			prepar(b, 'b');
+	}
+	while (!is_sorted(*a))
+		prepar(a, 'a');
+}
+
+void	push_swap(t_list **stack_a)
+{
+	t_list	*stack_b;
+
+	stack_b = NULL;
+	push_to_b(stack_a, &stack_b);
+	push_to_a(stack_a, &stack_b);
 }
 
 int	main(int argc, char **argv)
 {
-    t_list    *A;
-	t_list    *B;
+	t_list	*stack;
 
-    A = stack_a(argc, argv);
-	B = NULL;
-	swap(A);
-	rotate(&A);
-	// reverse_rotate(&A);
-	// push(&A, &B);
-	ft_lstclear(&A, del);
-    // print_stack(A);
-	// print_stack(B);
-    return (0);
+	if (argc < 2)
+		return (1);
+	stack = parsing_arg(argc, argv);
+	if (!stack || !only_in_stack(stack))
+		return (1);
+	push_swap(&stack);
+	// ft_printf("stack_a = ");
+	// print_stack(stack);
+	ft_clearstack(&stack);
+	return (0);
 }

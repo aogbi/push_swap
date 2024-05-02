@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aogbi <aogbi@student.42.fr>                +#+  +:+       +#+         #
+#    By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/01 10:08:49 by aogbi             #+#    #+#              #
-#    Updated: 2024/04/11 04:00:22 by aogbi            ###   ########.fr        #
+#    Created: 2024/05/02 06:30:57 by aogbi             #+#    #+#              #
+#    Updated: 2024/05/02 12:39:26 by aogbi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFTDIR = Libft
 FT_PRINTFDIR = printf
 LIBS = -L$(LIBFTDIR) -lft -L$(FT_PRINTFDIR) -lftprintf
 SRCS = \
-	main.c
+	main.c operations.c parsing.c clean.c push_to_a.c
 OBJS =$(SRCS:.c=.o)
 EXEC = push_swap
 
