@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:31:19 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/02 12:39:01 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/02 15:54:22 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,51 @@ void	prepar(t_list **list, char c)
 		ft_printf("s%c\n", c);
 	}
 }
+void	sort_array(int **array, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	j = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			if ((*array)[j] > (*array)[j + 1])
+			{
+				temp = (*array)[j];
+				(*array)[j] = (*array)[j + 1];
+				(*array)[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int	*store_stack(t_list *list, int size)
+{
+	int	*array;
+	int	i;
+
+	i = 0;
+	array = malloc(sizeof(int) * size);
+	while (list)
+	{
+		array[i] = (int)(ssize_t)list->content;
+		list = list->next;
+		i++;
+	}
+	sort_array(&array, size);
+	return (array);
+}
 
 void	push_to_b(t_list **a, t_list **b)
 {
-	while (ft_lstsize(*a) > 3)
-	{
-		prepar(a, 'a');
-		push(a, b);
-		ft_printf("pb\n");
-		if (ft_lstsize(*b) >= 3)
-			prepar(b, 'b');
-	}
-	while (!is_sorted(*a))
-		prepar(a, 'a');
+	
 }
 
 void	push_swap(t_list **stack_a)
@@ -66,6 +98,8 @@ void	push_swap(t_list **stack_a)
 	stack_b = NULL;
 	push_to_b(stack_a, &stack_b);
 	push_to_a(stack_a, &stack_b);
+	// ft_printf("stack_b = ");
+	// print_stack(stack_b);
 }
 
 int	main(int argc, char **argv)
