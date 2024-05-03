@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:30:31 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/02 08:54:14 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/03 09:54:19 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_clearstack(t_list **lst)
 
 int	only_in_stack(t_list *stack)
 {
-	t_list *tmp1;
-	t_list *tmp2;
+	t_list	*tmp1;
+	t_list	*tmp2;
 
 	tmp1 = stack;
 	while (tmp1)

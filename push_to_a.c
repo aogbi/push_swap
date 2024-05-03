@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:38:22 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/02 12:42:29 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/03 16:46:51 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,25 @@ void	push_to_a(t_list **a, t_list **b)
 	while (*b)
 	{
 		make_big_in_top(b);
-		while ((ssize_t)(*b)->content > (ssize_t)(*a)->content
-			&& (ssize_t)(*b)->content < (ssize_t)ft_lstlast(*a)->content)
-		{
-			rotate(a);
-			ft_printf("ra\n");
-		}
-		while ((ssize_t)(*b)->content < (ssize_t)ft_lstlast(*a)->content
-			&& (ssize_t)(*a)->content > (ssize_t)ft_lstlast(*a)->content)
+		while ((ssize_t)(*a)->content > (ssize_t)ft_lstlast(*a)->content)
 		{
 			reverse_rotate(a);
 			ft_printf("rra\n");
+		}
+		if ((ssize_t)big_num(*a)->content > (ssize_t)(*b)->content)
+		{
+			while ((ssize_t)(*b)->content > (ssize_t)(*a)->content)
+			{
+				rotate(a);
+				ft_printf("ra\n");
+			}
 		}
 		push(b, a);
 		ft_printf("pa\n");
 	}
 	if ((ssize_t)ft_lstlast(*a)->content < (ssize_t)(*a)->content)
 	{
-	    reverse_rotate(a);
+		reverse_rotate(a);
 		ft_printf("rra\n");
 	}
 }

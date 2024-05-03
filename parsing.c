@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:45:39 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/02 12:42:29 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/03 16:39:53 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	str_check(char *str)
 		if (!ft_isdigit(str[i]) && str[i] != '-' && str[i] != '+'
 			&& str[i] != ' ')
 			return (0);
+		if (i != 0 && str[i] == '-' && ft_isdigit(str[i - 1]))
+		    return (0);
 		i++;
 	}
 	return (1);
@@ -77,8 +79,14 @@ t_list	*is_valid(char **str)
 	while (str[i])
 	{
 		num = ft_atoi(str[i]);
-		if (num == 0 && !ziro(str[i]))
+		if ((num == 0 && !ziro(str[i]))
+			|| (ft_strlen(str[i]) > 11)
+			|| (str[i][0] == '-' && num > 0)
+			|| (ft_isdigit(str[i][0]) && num < 0))
+		{
+			ft_clearstack(&list);
 			return (NULL);
+		}
 		ft_lstadd_back(&list, ft_lstnew((void *)(ssize_t)num));
 		i++;
 	}
@@ -87,13 +95,16 @@ t_list	*is_valid(char **str)
 
 t_list	*parsing_arg(int argc, char **argv)
 {
-	char *str;
-	char **stack;
-	t_list *list;
+	char	*str;
+	char	**stack;
+	t_list	*list;
 
 	str = all_arg_in_string(argc, argv);
 	if (!str_check(str))
+	{
+		free(str);
 		return (NULL);
+	}
 	stack = ft_split(str, ' ');
 	free(str);
 	list = is_valid(stack);
