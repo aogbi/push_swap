@@ -6,11 +6,39 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:30:31 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/03 09:54:19 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/04 21:58:14 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	spaces_arg(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	is_sorted(t_list *list)
+{
+	t_list	*tmp;
+
+	tmp = list;
+	while (tmp->next)
+	{
+		if ((ssize_t)tmp->content > (ssize_t)tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 
 void	clean(char **stack)
 {

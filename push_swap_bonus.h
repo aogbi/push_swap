@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 06:32:04 by aogbi             #+#    #+#             */
+/*   Created: 2024/05/04 16:03:43 by aogbi             #+#    #+#             */
 /*   Updated: 2024/05/04 21:58:34 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include "Libft/libft.h"
 # include "printf/ft_printf.h"
+# include "get_next_line.h"
 # include <limits.h>
-
-typedef struct s_init
-{
-	int	*array;
-	int	*i;
-	int	range;
-	int	size;
-}		t_init;
 
 void	swap(t_list *stack);
 
@@ -41,13 +34,9 @@ t_list	*parsing_arg(int argc, char **argv);
 
 void	clean(char **stack);
 
-void	push_to_a(t_list **a, t_list **b);
-
-void	push_to_b(t_list **a, t_list **b);
-
 int		is_sorted(t_list *list);
 
-void	prepar(t_list **list, char c);
+void	print_stack(t_list *head);
 
 int		spaces_arg(char *str);
 

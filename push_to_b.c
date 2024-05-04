@@ -6,22 +6,20 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 09:43:40 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/03 18:55:14 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/04 20:10:04 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_array(int **array, int size)
+void	sort_array(int **array, int size)
 {
 	int	i;
 	int	j;
-	int range;
 	int	temp;
 
 	i = 0;
 	j = 0;
-	range = 0;
 	while (i < size)
 	{
 		j = 0;
@@ -32,16 +30,14 @@ int	sort_array(int **array, int size)
 				temp = (*array)[j];
 				(*array)[j] = (*array)[j + 1];
 				(*array)[j + 1] = temp;
-				range++;
 			}
 			j++;
 		}
 		i++;
 	}
-	return (range);
 }
 
-int	*store_stack(t_list *list, int size, int *range)
+int	*store_stack(t_list *list, int size)
 {
 	int	*array;
 	int	i;
@@ -54,7 +50,7 @@ int	*store_stack(t_list *list, int size, int *range)
 		list = list->next;
 		i++;
 	}
-	*range = sort_array(&array, size);
+	sort_array(&array, size);
 	return (array);
 }
 
@@ -103,14 +99,15 @@ void	push_to_b(t_list **a, t_list **b)
 	int	*array;
 	int	size;
 	int	index;
-	int	s_range;
-	int    range;
+	int	range;
 
 	index = 0;
 	size = ft_lstsize(*a);
-	array = store_stack(*a, size, &s_range);
-	range = (s_range * 2/ (size + size)) / 3;
-	if (range <= 0)
+	array = store_stack(*a, size);
+	range = 35;
+	if (size <= 150)
+		range = 15;
+	if (size <= 15)
 		range = 2;
 	while (ft_lstsize(*a) > 3)
 		init_and_push(a, b, (t_init){array, &index, range, size});

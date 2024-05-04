@@ -6,25 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:31:19 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/03 16:59:07 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/04 17:03:44 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_list *list)
-{
-	t_list	*tmp;
-
-	tmp = list;
-	while (tmp->next)
-	{
-		if ((ssize_t)tmp->content > (ssize_t)tmp->next->content)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
 
 void	prepar(t_list **list, char c)
 {

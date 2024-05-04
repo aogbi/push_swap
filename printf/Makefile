@@ -14,13 +14,13 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 
 clean:
-	rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
 .c.o:
-	$(CC) -c $(CFLAGS) $<
-	ar -rcs $(NAME) $@
+	@$(CC) -c $(CFLAGS) $<
+	@ar -rcs $(NAME) $@

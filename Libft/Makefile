@@ -23,13 +23,13 @@ $(NAME): $(OBJECTS)
 bonus: $(BOBJECTS)
 
 clean:
-	rm -f $(OBJECTS) $(BOBJECTS)
+	@rm -f $(OBJECTS) $(BOBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
 .c.o:
-	$(CC) -c $(CFLAGS) $<
-	ar -rcs $(NAME) $@
+	@$(CC) -c $(CFLAGS) $<
+	@ar -rcs $(NAME) $@

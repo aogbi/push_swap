@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aogbi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:19:32 by aogbi             #+#    #+#             */
-/*   Updated: 2023/11/14 00:06:41 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/04 21:50:11 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *nptr)
 {
-	int	signal;
-	int	result;
+	int		signal;
+	ssize_t	result;
 
 	signal = 1;
 	result = 0;
@@ -33,5 +34,8 @@ int	ft_atoi(const char *nptr)
 		result *= 10;
 		result += (*nptr++) - '0';
 	}
-	return (result * signal);
+	result *= signal;
+	if ((ssize_t)result > INT_MAX || (ssize_t)result < INT_MIN)
+		return (0);
+	return ((int)result);
 }
