@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:55:20 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 18:41:07 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/05 20:42:02 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	*get_next_line(int fd)
 		free_memory(&line);
 		return (NULL);
 	}
-	if (stavar[0] == '\0')
+	if (stavar && stavar[0] == '\0')
 		free_memory(&stavar);
 	return (line);
 }

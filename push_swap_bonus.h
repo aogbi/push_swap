@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:03:43 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 21:58:34 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/04 22:26:03 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ t_list	*parsing_arg(int argc, char **argv);
 void	clean(char **stack);
 
 int		is_sorted(t_list *list);
-
-void	print_stack(t_list *head);
 
 int		spaces_arg(char *str);
 
