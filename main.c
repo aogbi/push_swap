@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:31:19 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 17:03:44 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/06 12:30:27 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	if (!stack || !only_in_stack(stack))
 	{
 		ft_clearstack(&stack);
-		ft_printf("Error\n");
+		write(2, "Error\n", 7);
 		return (1);
 	}
 	if (ft_lstsize(stack) > 1 && !is_sorted(stack))

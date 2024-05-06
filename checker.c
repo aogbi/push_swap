@@ -6,7 +6,7 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:02:38 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/05 20:48:37 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/06 12:28:49 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	read_from_input_fd(t_list **stack_a)
 	{
 		if (!is_valid_bonus(stack_a, &stack_b, line))
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 7);
 			free_memory(&line);
 			ft_clearstack(&stack_b);
 			return (0);
@@ -94,7 +94,7 @@ int	main(int argc, char **argv)
 	if (!stack || !only_in_stack(stack))
 	{
 		ft_clearstack(&stack);
-		ft_printf("Error\n");
+		write(2, "Error\n", 7);
 		return (1);
 	}
 	size = ft_lstsize(stack);
