@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 20:56:57 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 18:29:43 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:25:37 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {

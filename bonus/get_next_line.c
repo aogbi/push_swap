@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:55:20 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/05 20:42:02 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:25:43 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 static void	ft_strjoin(char **s1, char *s2)
 {

@@ -6,15 +6,15 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:32:04 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 21:58:34 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:26:59 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "Libft/libft.h"
-# include "printf/ft_printf.h"
+# include "../Libft/libft.h"
+# include "../printf/ft_printf.h"
 # include <limits.h>
 
 typedef struct s_init

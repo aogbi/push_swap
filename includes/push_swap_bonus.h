@@ -6,15 +6,15 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:03:43 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 22:26:03 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:26:49 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-# include "Libft/libft.h"
-# include "printf/ft_printf.h"
+# include "../Libft/libft.h"
+# include "../printf/ft_printf.h"
 # include "get_next_line.h"
 # include <limits.h>
 

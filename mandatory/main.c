@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:31:19 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/06 12:30:27 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:24:20 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	prepar(t_list **list, char c)
 {

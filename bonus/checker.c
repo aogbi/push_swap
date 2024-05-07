@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:02:38 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/06 12:28:49 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:24:50 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../includes/push_swap_bonus.h"
 
 int	helper_function(t_list **stack_a, t_list **stack_b, char *line)
 {

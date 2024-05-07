@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:45:39 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 21:57:33 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:26:01 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 char	*all_arg_in_string(int argc, char **argv)
 {

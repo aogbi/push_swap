@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:30:31 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 21:58:14 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:25:07 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 int	spaces_arg(char *str)
 {

@@ -6,7 +6,7 @@
 #    By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/02 06:30:57 by aogbi             #+#    #+#              #
-#    Updated: 2024/05/04 22:18:03 by aogbi            ###   ########.fr        #
+#    Updated: 2024/05/07 10:35:54 by aogbi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,17 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 LIBFTDIR = Libft
 FT_PRINTFDIR = printf
+INCDIR = includes
 LIBS = -L$(LIBFTDIR) -lft -L$(FT_PRINTFDIR) -lftprintf
 
 SRCS = \
-	main.c operations.c parsing.c clean.c push_to_a.c \
-	push_to_b.c
+	mandatory/main.c mandatory/operations.c mandatory/parsing.c \
+	mandatory/clean.c mandatory/push_to_a.c mandatory/push_to_b.c
 
 BSRCS = \
-	checker.c operations.c parsing.c clean.c \
-	get_next_line.c get_next_line_utils.c
+	bonus/checker.c bonus/operations.c bonus/parsing.c \
+	bonus/get_next_line.c bonus/get_next_line_utils.c \
+	bonus/clean.c 
 
 OBJS =$(SRCS:.c=.o)
 BOBJS =$(BSRCS:.c=.o)
@@ -55,7 +57,7 @@ $(BNAME): $(BOBJS)
 
 %.o: %.c
 	@echo "$(YELLOW)Compiling...$(NC)"
-	@$(CC) $(CFLAGS) -I$(LIBFTDIR) -I$(FT_PRINTFDIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(LIBFTDIR) -I$(FT_PRINTFDIR) -I$(INCDIR) -c $< -o $@
 
 clean:
 	@make clean -C Libft | sed '/^make\[1\]: Entering directory/d'  | sed '/^make\[1\]: Leaving directory/d'

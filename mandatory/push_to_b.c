@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 09:43:40 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/04 20:10:04 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:24:43 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_array(int **array, int size)
 {

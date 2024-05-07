@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:38:22 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/03 16:46:51 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:24:35 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*big_num(t_list *list)
 {

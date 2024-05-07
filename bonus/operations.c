@@ -6,11 +6,11 @@
 /*   By: aogbi <aogbi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 06:42:29 by aogbi             #+#    #+#             */
-/*   Updated: 2024/05/05 14:35:11 by aogbi            ###   ########.fr       */
+/*   Updated: 2024/05/07 10:25:49 by aogbi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 void	swap(t_list *stack)
 {
