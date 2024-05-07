@@ -17,7 +17,7 @@ rra: Reverse rotate Stack A (shift all integers down by one, moving the bottom i
 rrb: Reverse rotate Stack B.
 rrr: Equivalent to performing rra and rrb simultaneously.
 ## Sorting Algorithm:
-Students must design an algorithm that sorts the integers in Stack A using the provided operations while adhering to the following principles:
+must design an algorithm that sorts the integers in Stack A using the provided operations while adhering to the following principles:
 
 Minimize the total number of operations.
 Utilize Stack B as an auxiliary stack strategically to optimize the sorting process.
